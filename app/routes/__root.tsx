@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "@tanstack/react-router";
 import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
+import { ClerkProvider } from "@clerk/tanstack-start";
 import * as React from "react";
 
 export const Route = createRootRoute({
@@ -35,18 +36,20 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <Html lang="de">
-      <Head>
-        <Meta />
-        <ColorSchemeScript />
-      </Head>
-      <Body>
-        <MantineProvider>
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </MantineProvider>
-      </Body>
-    </Html>
+    <ClerkProvider>
+      <Html lang="de">
+        <Head>
+          <Meta />
+          <ColorSchemeScript />
+        </Head>
+        <Body>
+          <MantineProvider>
+            {children}
+            <ScrollRestoration />
+            <Scripts />
+          </MantineProvider>
+        </Body>
+      </Html>
+    </ClerkProvider>
   );
 }

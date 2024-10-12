@@ -14,6 +14,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@clerk/backend": "^1.13.9",
+    "@clerk/tanstack-start": "^0.4.0",
     "@mantine/carousel": "^7.13.2",
     "@mantine/charts": "^7.13.2",
     "@mantine/code-highlight": "^7.13.2",
